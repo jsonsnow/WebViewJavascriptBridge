@@ -13,11 +13,11 @@
 #endif
 
 #if __has_feature(objc_arc_weak)
-    #define WVJB_WEAK __weak
+#define WVJB_WEAK __weak
 #else
-    #define WVJB_WEAK __unsafe_unretained
+#define WVJB_WEAK __unsafe_unretained
 #endif
-
+static NSArray *_legalDomain;
 @implementation WebViewJavascriptBridge {
     WVJB_WEAK WVJB_WEBVIEW_TYPE* _webView;
     WVJB_WEAK id _webViewDelegate;
@@ -27,7 +27,8 @@
 
 /* API
  *****/
-
++ (void)configLegalDomain:(NSArray *)legalDomain {_legalDomain = legalDomain;}
++ (NSArray *)leagaldDomain { return _legalDomain;}
 + (void)enableLogging {
     [WebViewJavascriptBridgeBase enableLogging];
 }
@@ -174,13 +175,21 @@
         [strongDelegate webView:webView didFailLoadWithError:error];
     }
 }
-
+- (BOOL)isLegalDomain:(NSURL *)url {
+#ifdef DEBUG
+    NSLog(@"current url is:%@",url);
+#endif
+    if ([_legalDomain containsObject:url.host] || _legalDomain.count == 0) {
+        return YES;
+    }
+    return NO;
+}
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     if (webView != _webView) { return YES; }
     
     NSURL *url = [request URL];
     __strong WVJB_WEBVIEW_DELEGATE_TYPE* strongDelegate = _webViewDelegate;
-    if ([_base isWebViewJavascriptBridgeURL:url]) {
+    if ([_base isWebViewJavascriptBridgeURL:url] && [self isLegalDomain:webView.request.URL]) {
         if ([_base isBridgeLoadedURL:url]) {
             [_base injectJavascriptFile];
         } else if ([_base isQueueMessageURL:url]) {
@@ -209,3 +218,4 @@
 #endif
 
 @end
+

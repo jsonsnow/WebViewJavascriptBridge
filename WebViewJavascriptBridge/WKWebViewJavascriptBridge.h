@@ -19,6 +19,8 @@
 
 + (instancetype)bridgeForWebView:(WKWebView*)webView;
 + (void)enableLogging;
++ (void)configLegalDomain:(NSArray *)legalDomain;
++ (NSArray *)leagaldDomain;
 
 - (void)registerHandler:(NSString*)handlerName handler:(WVJBHandler)handler;
 - (void)removeHandler:(NSString*)handlerName;
@@ -32,3 +34,4 @@
 @end
 
 #endif
+

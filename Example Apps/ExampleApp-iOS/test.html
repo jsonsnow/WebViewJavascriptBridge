@@ -1,0 +1,109 @@
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>
+        js调用java
+    </title>
+</head>
+
+<body>
+<p>
+    <xmp id="show">
+    </xmp>
+</p>
+<p>
+    <xmp id="init">
+    </xmp>
+</p>
+<p>
+    <input type="button" id="enter" value="是否注入" onclick="testDiv();"/>
+    <a href=""></a>
+</p>
+<p>
+    <input type="button" value="获取用户相关" onclick="funUser();"/>
+</p>
+<p>
+    <a href="weic://apath/login?next_url=https://www.weiclicai.com/&closeWeb=false">跳转首页</a>
+</p>
+<p>
+    <input type="button" value="设置导航栏" onclick="setTitlebar();"/>
+</p>
+<p>
+    <input type="button" value="分享测试" onclick="share();"/>
+</p>
+<p>
+    <input type="button" value="通过参数实现页面跳转" onclick="openPage();"/>
+</p>
+</body>
+<script>
+       var userAgent=function(){
+       var ua = navigator.userAgent.toLowerCase();
+       return (/vcuseragen_android/.test(ua)) ? "android" : (/vcuseragen_ios/.test(ua))?"ios":false ;
+      }
+
+       function testDiv() {
+            if (window.WebViewJavascriptBridge) {
+         document.getElementById("show").innerHTML = "测试"+userAgent();
+         } else {
+             document.addEventListener(
+            'WebViewJavascriptBridgeReady'
+            , function() {
+                 document.getElementById("show").innerHTML = "测试"+userAgent();
+            },
+            false
+        );
+            }
+        }
+
+        function funUser() {
+            window.WebViewJavascriptBridge.callHandler(
+                'getUser'
+                , "islogin"
+                , function(responseData) {
+
+                }
+            );
+        }
+        //设置导航栏
+  function setTitlebar() {
+         var titlebar={'titlebarColor':0XFFFFFF,'title':"标题2",'titleColor':0X000000,'isBack':false,'statusBar':0XFFFFFF}
+            //call native method
+            window.WebViewJavascriptBridge.callHandler(
+                'setTitlebar'
+                , titlebar
+                , function(responseData) {
+                    document.getElementById("show").innerHTML= "send get responseData from java, data = " + responseData
+                }
+            );
+        }
+        //分享
+      function share() {
+        var shareData={'type':'QQ','url':'https://www.weiclicai.com/','title':'标题','thumb':'图片地址','desc':'描述文字'}
+            //call native method
+            window.WebViewJavascriptBridge.callHandler(
+                'share'
+                , shareData
+                , function(responseData) {
+                    document.getElementById("show").innerHTML= "分享 " + responseData
+                }
+            );
+        }
+       //页面参数跳转
+      function openPage() {
+        var data={'url':'login','next_url':'https://www.weiclicai.com/'}
+            //call native method
+            window.WebViewJavascriptBridge.callHandler(
+                'openPage'
+                , data
+                , function(responseData) {
+                    document.getElementById("show").innerHTML= "页面参数跳转成功 " + responseData
+                }
+            );
+        }
+
+
+
+
+</script>
+
+</html>

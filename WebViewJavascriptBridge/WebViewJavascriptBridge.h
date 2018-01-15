@@ -18,21 +18,22 @@
 #endif
 
 #if defined __MAC_OS_X_VERSION_MAX_ALLOWED
-    #define WVJB_PLATFORM_OSX
-    #define WVJB_WEBVIEW_TYPE WebView
-    #define WVJB_WEBVIEW_DELEGATE_TYPE NSObject<WebViewJavascriptBridgeBaseDelegate>
-    #define WVJB_WEBVIEW_DELEGATE_INTERFACE NSObject<WebViewJavascriptBridgeBaseDelegate, WebPolicyDelegate>
+#define WVJB_PLATFORM_OSX
+#define WVJB_WEBVIEW_TYPE WebView
+#define WVJB_WEBVIEW_DELEGATE_TYPE NSObject<WebViewJavascriptBridgeBaseDelegate>
+#define WVJB_WEBVIEW_DELEGATE_INTERFACE NSObject<WebViewJavascriptBridgeBaseDelegate, WebPolicyDelegate>
 #elif defined __IPHONE_OS_VERSION_MAX_ALLOWED
-    #import <UIKit/UIWebView.h>
-    #define WVJB_PLATFORM_IOS
-    #define WVJB_WEBVIEW_TYPE UIWebView
-    #define WVJB_WEBVIEW_DELEGATE_TYPE NSObject<UIWebViewDelegate>
-    #define WVJB_WEBVIEW_DELEGATE_INTERFACE NSObject<UIWebViewDelegate, WebViewJavascriptBridgeBaseDelegate>
+#import <UIKit/UIWebView.h>
+#define WVJB_PLATFORM_IOS
+#define WVJB_WEBVIEW_TYPE UIWebView
+#define WVJB_WEBVIEW_DELEGATE_TYPE NSObject<UIWebViewDelegate>
+#define WVJB_WEBVIEW_DELEGATE_INTERFACE NSObject<UIWebViewDelegate, WebViewJavascriptBridgeBaseDelegate>
 #endif
 
 @interface WebViewJavascriptBridge : WVJB_WEBVIEW_DELEGATE_INTERFACE
 
-
++ (void)configLegalDomain:(NSArray *)legalDomain;
++ (NSArray *)leagaldDomain;
 + (instancetype)bridgeForWebView:(id)webView;
 + (instancetype)bridge:(id)webView;
 
@@ -48,3 +49,4 @@
 - (void)disableJavscriptAlertBoxSafetyTimeout;
 
 @end
+
