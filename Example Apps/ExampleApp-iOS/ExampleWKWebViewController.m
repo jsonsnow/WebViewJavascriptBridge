@@ -66,6 +66,7 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
     NSURL *url = navigationAction.request.URL;
+    decisionHandler(WKNavigationActionPolicyAllow);
     
 }
 - (void)callHandler:(id)sender {
