@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { 'marcuswestin' => 'marcus.westin@gmail.com' }
   s.source       = { :git => 'https://github.com/jsonsnow/WebViewJavascriptBridge.git', :tag => s.version.to_s }
-  s.platforms    = { :ios => "5.0", :osx => "" }
+  s.platforms    = { :ios => "8.0", :osx => "" }
   s.requires_arc = true
   
   s.ios.source_files         = 'WebViewJavascriptBridge/*.{h,m}'
