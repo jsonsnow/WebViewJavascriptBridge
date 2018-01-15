@@ -7,7 +7,6 @@
 //
 
 #import "VCJSLinkHandler.h"
-#import "NSString+mock.h"
 #import "NSURL+VCUrlCompoent.h"
 
 @interface VCJSLinkHandler ()
