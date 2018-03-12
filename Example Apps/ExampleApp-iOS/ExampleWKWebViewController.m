@@ -8,7 +8,6 @@
 
 #import "ExampleWKWebViewController.h"
 #import "WebViewJavascriptBridge.h"
-#import "WebViewJavascriptAndLinkBridgeBase.h"
 
 @interface ExampleWKWebViewController ()
 
