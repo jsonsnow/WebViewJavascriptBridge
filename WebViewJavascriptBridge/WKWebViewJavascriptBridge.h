@@ -31,6 +31,9 @@
 - (void)setWebViewDelegate:(id)webViewDelegate;
 - (void)disableJavscriptAlertBoxSafetyTimeout;
 
+//add function
+- (void)registUrlString:(NSString *)urlString handler:(VCJSUrlkHandler)handler;
+- (void)removeUrlString:(NSURL *)urlString;
 @end
 
 #endif

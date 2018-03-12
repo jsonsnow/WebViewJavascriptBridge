@@ -58,6 +58,14 @@ static NSArray *_legalDomain;
     [_base.messageHandlers removeObjectForKey:handlerName];
 }
 
+- (void)registUrlString:(NSString *)urlString handler:(VCJSUrlkHandler)handler {
+    [_base.linkBridge registUrlString:urlString handler:handler];
+}
+
+- (void)removeUrlString:(NSURL *)urlString {
+    [_base.linkBridge removeUrlString:urlString];
+}
+
 - (void)reset {
     [_base reset];
 }
@@ -147,6 +155,10 @@ static NSArray *_legalDomain;
     NSURL *url = navigationAction.request.URL;
     __strong typeof(_webViewDelegate) strongDelegate = _webViewDelegate;
     
+    if (![_base.linkBridge handler:url urlRegular:nil]) {
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
     if ([_base isWebViewJavascriptBridgeURL:url] && [self isLegalDomain:webView.URL]) {
         if ([_base isBridgeLoadedURL:url]) {
             [_base injectJavascriptFile];

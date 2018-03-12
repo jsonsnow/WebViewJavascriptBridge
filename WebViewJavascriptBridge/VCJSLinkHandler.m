@@ -3,7 +3,7 @@
 //  VCFinances
 //
 //  Created by chen liang on 2017/12/26.
-//  Copyright © 2017年 weiclicai. All rights reserved.
+//  Copyright © 2017年 chen liang. All rights reserved.
 //
 
 #import "VCJSLinkHandler.h"
@@ -26,7 +26,7 @@
         self.callBackHandlers[urlString] = handler;
         [self.registerUrlArrays addObject:urlString];
     } else {
-        NSLog(@"url error plase check you register url");
+        NSLog(@"url error please check you register url");
     }
 }
 - (void)removeUrlString:(NSURL *)urlString {

@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VCJSLinkHandler.h"
 
 #define kOldProtocolScheme @"wvjbscheme"
 #define kNewProtocolScheme @"https"
@@ -28,7 +29,10 @@ typedef NSDictionary WVJBMessage;
 @property (strong, nonatomic) NSMutableDictionary* responseCallbacks;
 @property (strong, nonatomic) NSMutableDictionary* messageHandlers;
 @property (strong, nonatomic) WVJBHandler messageHandler;
+
+//add function
 @property (strong, nonatomic) NSArray *legalDomain;
+@property (nonatomic, strong) VCJSLinkHandler *linkBridge;
 
 + (void)enableLogging;
 + (void)setLogMaxLength:(int)length;

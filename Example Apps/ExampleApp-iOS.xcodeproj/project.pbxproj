@@ -21,7 +21,6 @@
 		2CAB869B1727684300BD9ED1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CAB869A1727684300BD9ED1 /* Default-568h@2x.png */; };
 		2CEB3EC01602563600548120 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEB3EBF1602563600548120 /* UIKit.framework */; };
 		BA29D75C200C785E00D07600 /* VCJSLinkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BA29D757200C785D00D07600 /* VCJSLinkHandler.m */; };
-		BA29D75D200C785E00D07600 /* VCWKWebViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA29D758200C785E00D07600 /* VCWKWebViewController.mm */; };
 		BA29D75E200C785E00D07600 /* NSURL+VCUrlCompoent.m in Sources */ = {isa = PBXBuildFile; fileRef = BA29D75A200C785E00D07600 /* NSURL+VCUrlCompoent.m */; };
 /* End PBXBuildFile section */
 
@@ -53,10 +52,8 @@
 		2CEB3EC31602563600548120 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BA29D756200C785D00D07600 /* VCJSLinkHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCJSLinkHandler.h; sourceTree = "<group>"; };
 		BA29D757200C785D00D07600 /* VCJSLinkHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCJSLinkHandler.m; sourceTree = "<group>"; };
-		BA29D758200C785E00D07600 /* VCWKWebViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = VCWKWebViewController.mm; sourceTree = "<group>"; };
 		BA29D759200C785E00D07600 /* NSURL+VCUrlCompoent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+VCUrlCompoent.h"; sourceTree = "<group>"; };
 		BA29D75A200C785E00D07600 /* NSURL+VCUrlCompoent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+VCUrlCompoent.m"; sourceTree = "<group>"; };
-		BA29D75B200C785E00D07600 /* VCWKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCWKWebViewController.h; sourceTree = "<group>"; };
 		BA466E801FF1F328001BF4F0 /* test.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,8 +77,6 @@
 				BA29D75A200C785E00D07600 /* NSURL+VCUrlCompoent.m */,
 				BA29D756200C785D00D07600 /* VCJSLinkHandler.h */,
 				BA29D757200C785D00D07600 /* VCJSLinkHandler.m */,
-				BA29D75B200C785E00D07600 /* VCWKWebViewController.h */,
-				BA29D758200C785E00D07600 /* VCWKWebViewController.mm */,
 				2C3E7C441C5A890A00A1E322 /* WebViewJavascriptBridge_JS.h */,
 				2C3E7C451C5A890A00A1E322 /* WebViewJavascriptBridge_JS.m */,
 				2C1562A8176B9F6200B4AE50 /* WebViewJavascriptBridge.h */,
@@ -234,7 +229,6 @@
 				BA29D75E200C785E00D07600 /* NSURL+VCUrlCompoent.m in Sources */,
 				2C1562C0176BA63500B4AE50 /* WebViewJavascriptBridge.m in Sources */,
 				0E8082DB19EDC32300479452 /* WKWebViewJavascriptBridge.m in Sources */,
-				BA29D75D200C785E00D07600 /* VCWKWebViewController.mm in Sources */,
 				2C45CA2C1884AD520002A4E2 /* ExampleUIWebViewController.m in Sources */,
 				0ECB01441A0EE1F20037FF4E /* ExampleWKWebViewController.m in Sources */,
 				2CA045C217117439006DEE8B /* ExampleAppDelegate.m in Sources */,

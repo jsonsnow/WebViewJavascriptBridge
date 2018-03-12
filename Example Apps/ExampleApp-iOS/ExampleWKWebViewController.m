@@ -8,6 +8,7 @@
 
 #import "ExampleWKWebViewController.h"
 #import "WebViewJavascriptBridge.h"
+#import "WebViewJavascriptAndLinkBridgeBase.h"
 
 @interface ExampleWKWebViewController ()
 
@@ -33,6 +34,9 @@
     }];
     
     [_bridge callHandler:@"testJavascriptHandler" data:@{ @"foo":@"before ready" }];
+    [_bridge registUrlString:@"weic://apath/login" handler:^(NSDictionary *params) {
+        NSLog(@"%@",params);
+    }];
     
     [self renderButtons:webView];
     [self loadExamplePage:webView];

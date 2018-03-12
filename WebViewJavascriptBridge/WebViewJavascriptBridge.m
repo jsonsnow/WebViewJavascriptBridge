@@ -86,6 +86,14 @@ static NSArray *_legalDomain;
     [_base.messageHandlers removeObjectForKey:handlerName];
 }
 
+- (void)registUrlString:(NSString *)urlString handler:(VCJSUrlkHandler)handler {
+    [_base.linkBridge registUrlString:urlString handler:handler];
+}
+
+- (void)removeUrlString:(NSURL *)urlString {
+    [_base.linkBridge removeUrlString:urlString];
+}
+
 - (void)disableJavscriptAlertBoxSafetyTimeout {
     [_base disableJavscriptAlertBoxSafetyTimeout];
 }
@@ -124,6 +132,10 @@ static NSArray *_legalDomain;
     if (webView != _webView) { return; }
     
     NSURL *url = [request URL];
+    if (![_base.linkBridge handler:url urlRegular:nil]) {
+        [listener ignore];
+        return;
+    }
     if ([_base isWebViewJavascriptBridgeURL:url]) {
         if ([_base isBridgeLoadedURL:url]) {
             [_base injectJavascriptFile];

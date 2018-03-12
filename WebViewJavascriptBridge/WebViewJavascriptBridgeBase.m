@@ -25,6 +25,7 @@ static int logMaxLength = 500;
         self.messageHandlers = [NSMutableDictionary dictionary];
         self.startupMessageQueue = [NSMutableArray array];
         self.responseCallbacks = [NSMutableDictionary dictionary];
+        self.linkBridge = [[VCJSLinkHandler alloc] init];
         _uniqueId = 0;
     }
     return self;

@@ -3,7 +3,7 @@
 //  VCFinances
 //
 //  Created by chen liang on 2017/12/26.
-//  Copyright © 2017年 weiclicai. All rights reserved.
+//  Copyright © 2017年 chen liang. All rights reserved.
 //
 
 #import "NSURL+VCUrlCompoent.h"
@@ -20,6 +20,7 @@
     NSString *urlKey = [urlString substringToIndex:range.location];
     return urlKey;
 }
+
 - (NSDictionary *)queryParams {
     NSMutableDictionary *params = @{}.mutableCopy;
     NSString *queryString = self.query;
