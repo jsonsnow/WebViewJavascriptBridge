@@ -9,11 +9,11 @@
 	</style>
 </head><body>
 	<h1>WebViewJavascriptBridge Demo</h1>
+    <a href="test://test/link?name=snow">test link handler</a>
 	<script>
 	window.onerror = function(err) {
 		log('window.onerror: ' + err)
 	}
-
     function setupWebViewJavascriptBridge(callback) {
         if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
         if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
@@ -24,7 +24,6 @@
         document.documentElement.appendChild(WVJBIframe);
         setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
     }
-
     setupWebViewJavascriptBridge(function(bridge) {
         var uniqueId = 1
         function log(message, data) {
@@ -58,3 +57,4 @@
 	</script>
 	<div id='buttons'></div> <div id='log'></div>
 </body></html>
+

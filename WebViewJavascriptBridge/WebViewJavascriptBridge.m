@@ -200,6 +200,9 @@ static NSArray *_legalDomain;
     if (webView != _webView) { return YES; }
     
     NSURL *url = [request URL];
+    if ([_base.linkBridge handler:url urlRegular:nil]) {
+        return NO;
+    }
     __strong WVJB_WEBVIEW_DELEGATE_TYPE* strongDelegate = _webViewDelegate;
     if ([_base isWebViewJavascriptBridgeURL:url] && [self isLegalDomain:webView.request.URL]) {
         if ([_base isBridgeLoadedURL:url]) {

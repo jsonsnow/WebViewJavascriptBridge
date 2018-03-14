@@ -154,8 +154,7 @@ static NSArray *_legalDomain;
     if (webView != _webView) { return; }
     NSURL *url = navigationAction.request.URL;
     __strong typeof(_webViewDelegate) strongDelegate = _webViewDelegate;
-    
-    if (![_base.linkBridge handler:url urlRegular:nil]) {
+    if ([_base.linkBridge handler:url urlRegular:nil]) {
         decisionHandler(WKNavigationActionPolicyCancel);
         return;
     }

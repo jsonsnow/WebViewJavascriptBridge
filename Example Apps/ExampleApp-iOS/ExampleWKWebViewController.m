@@ -33,7 +33,7 @@
     }];
     
     [_bridge callHandler:@"testJavascriptHandler" data:@{ @"foo":@"before ready" }];
-    [_bridge registUrlString:@"weic://apath/login" handler:^(NSDictionary *params) {
+    [_bridge registUrlString:@"test://test/link" handler:^(NSDictionary *params) {
         NSLog(@"%@",params);
     }];
     

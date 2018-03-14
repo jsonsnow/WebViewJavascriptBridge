@@ -32,6 +32,9 @@
     }];
     
     [_bridge callHandler:@"testJavascriptHandler" data:@{ @"foo":@"before ready" }];
+    [_bridge registUrlString:@"test://test/link" handler:^(NSDictionary *params) {
+        NSLog(@"%@",params);
+    }];
     
     [self renderButtons:webView];
     [self loadExamplePage:webView];

@@ -54,7 +54,6 @@
 		BA29D757200C785D00D07600 /* VCJSLinkHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCJSLinkHandler.m; sourceTree = "<group>"; };
 		BA29D759200C785E00D07600 /* NSURL+VCUrlCompoent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+VCUrlCompoent.h"; sourceTree = "<group>"; };
 		BA29D75A200C785E00D07600 /* NSURL+VCUrlCompoent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+VCUrlCompoent.m"; sourceTree = "<group>"; };
-		BA466E801FF1F328001BF4F0 /* test.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +92,6 @@
 		2CA045B617117439006DEE8B /* ExampleApp-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				BA466E801FF1F328001BF4F0 /* test.html */,
 				2CA0465B1711AC8D006DEE8B /* ExampleApp.html */,
 				2CA045BC17117439006DEE8B /* ExampleAppDelegate.h */,
 				2CA045BD17117439006DEE8B /* ExampleAppDelegate.m */,
