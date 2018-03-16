@@ -31,7 +31,9 @@
         NSLog(@"testObjcCallback called: %@", data);
         responseCallback(@"Response from testObjcCallback");
     }];
-    
+    [_bridge callHandler:@"xx" data:@{} responseCallback:^(id responseData) {
+        
+    }];
     [_bridge callHandler:@"testJavascriptHandler" data:@{ @"foo":@"before ready" }];
     [_bridge registUrlString:@"test://test/link" handler:^(NSDictionary *params) {
         NSLog(@"%@",params);
