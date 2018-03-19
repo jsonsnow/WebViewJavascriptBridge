@@ -183,7 +183,9 @@
 				ORGANIZATIONNAME = "Marcus Westin";
 				TargetAttributes = {
 					2CEB3EBA1602563600548120 = {
+						DevelopmentTeam = 7VV5D378YQ;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -328,13 +330,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7VV5D378YQ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ExampleApp-iOS/ExampleApp-iOS-Prefix.pch";
 				INFOPLIST_FILE = "ExampleApp-iOS/ExampleApp-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.weicilicai.distribute;
 				PRODUCT_NAME = "ExampleApp-iOS";
+				PROVISIONING_PROFILE = "7f615455-a111-41dc-9fba-84149ed39162";
+				PROVISIONING_PROFILE_SPECIFIER = CLLDistributeTestProfile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
@@ -345,13 +352,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7VV5D378YQ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ExampleApp-iOS/ExampleApp-iOS-Prefix.pch";
 				INFOPLIST_FILE = "ExampleApp-iOS/ExampleApp-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.weicilicai.distribute;
 				PRODUCT_NAME = "ExampleApp-iOS";
+				PROVISIONING_PROFILE = "f485fe2f-a886-456c-94e9-74bec05640f7";
+				PROVISIONING_PROFILE_SPECIFIER = CLLDistributeTestProfile;
 				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};

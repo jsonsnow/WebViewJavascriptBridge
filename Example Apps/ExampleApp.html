@@ -19,10 +19,19 @@
         setupWebViewJavascriptBridge()
        } else {
            document.addEventListener("WebViewJavascriptBridgeReady", function(){
-                                     setupWebViewJavascriptBridge();
+                                     setupWebViewJavascriptBridge()
                                      });
        }
     function setupWebViewJavascriptBridge() {
+        var uniqueId = 1
+        function log(message, data) {
+            var log = document.getElementById('log')
+            var el = document.createElement('div')
+            el.className = 'logLine'
+            el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
+            if (log.children.length) { log.insertBefore(el, log.children[0]) }
+            else { log.appendChild(el) }
+        }
         bridge = window.WebViewJavascriptBridge
         bridge.registerHandler('testJavascriptHandler',function(data,responseCallback)) {
             log('Objc called testJavascroptHandler with',data)
@@ -52,15 +61,6 @@
 <!--        setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)-->
 <!--    }-->
 <!--    setupWebViewJavascriptBridge(function(bridge) {-->
-<!--        var uniqueId = 1-->
-<!--        function log(message, data) {-->
-<!--            var log = document.getElementById('log')-->
-<!--            var el = document.createElement('div')-->
-<!--            el.className = 'logLine'-->
-<!--            el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)-->
-<!--            if (log.children.length) { log.insertBefore(el, log.children[0]) }-->
-<!--            else { log.appendChild(el) }-->
-<!--        }-->
 <!---->
 <!--        bridge.registerHandler('testJavascriptHandler', function(data, responseCallback) {-->
 <!--            log('ObjC called testJavascriptHandler with', data)-->
