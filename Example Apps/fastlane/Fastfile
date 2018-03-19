@@ -12,8 +12,20 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+ lane :release do |option|
+	#根据传入参数version设置app的版本号
+	increment_version_number(version_number: option[:version]) 
+	#自动增加build号
+	increment_build_number
+    #证书签名
+    sigh
+    #编译打包
+    scheme_name = option[:scheme]
+    configuration = 'Release'
+    version = get_info_plist_value(path: "./#{scheme_name}/Info.plist", key: "CFBundleShortVersionString")
+    build = get_info_plist_value(path: "./#{scheme_name}/Info.plist", key: "CFBundleVersion")
+    output_directory = File.expand_path("..", Dir.pwd) + File::Separator + 'build'
+    output_name = "#{scheme_name}_#{configuration}_#{version}_#{build}_#{Time.now.strftime('%Y%m%d%H%M%S')}.ipa"
+    gym(scheme: scheme_name, clean: true, export_method:'appstore', configuration: configuration, output_directory: output_directory, output_name: output_name)
   end
 end
